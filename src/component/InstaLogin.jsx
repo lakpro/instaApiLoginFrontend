@@ -1,6 +1,7 @@
 const REDIRECT_URI = import.meta.env.VITE_REDIRECT_URI;
 import { FaInstagram } from "react-icons/fa";
 import AuroraBackground from "./Aurora";
+import { Link } from "react-router-dom";
 
 const LoginWithInstagram = () => {
   const handleLogin = () => {
@@ -13,7 +14,7 @@ const LoginWithInstagram = () => {
       style={{}}
     >
       <AuroraBackground show={true} />
-      <div className="bg-black/40 backdrop-blur-lg p-10 rounded-2xl shadow-lg max-w-sm w-full flex flex-col items-center space-y-6">
+      <div className="bg-black/40 backdrop-blur-lg p-10 rounded-2xl shadow-lg max-w-sm w-full flex flex-col items-center space-y-6 pb-5">
         <h1
           className="text-[70px] font-bolder text-white"
           style={{ fontFamily: "Cookie, cursive" }}
@@ -44,6 +45,9 @@ const LoginWithInstagram = () => {
             </span>
           </div>
         </button>
+        <Link to={"/policy"}>
+          <div className="text-gray-300">Privacy Policy</div>
+        </Link>
       </div>
     </div>
   );
