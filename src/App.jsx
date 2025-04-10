@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
 
 import InstaLogin from "./component/InstaLogin";
 import Profile from "./component/Profile"; // <-- Add this import
@@ -11,6 +12,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<InstaLogin />} />
+        <Route path="/login" element={<InstaLogin />} />
         <Route
           path="/profile"
           element={
