@@ -54,9 +54,7 @@ const AuroraEffect = () => {
         />
 
         {/* Content */}
-        <div className="fixed z-10 flex items-center justify-center h-full w-full text-white text-4xl font-bold">
-          {/* 🌌 Aurora Live Vibes */}
-        </div>
+        <div className="fixed z-10 flex items-center justify-center h-full w-full text-white text-4xl font-bold"></div>
       </div>
     </>
   );

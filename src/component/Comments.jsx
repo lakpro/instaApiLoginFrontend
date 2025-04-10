@@ -29,7 +29,7 @@ const Comments = ({ mediaId }) => {
           topLevel.push(comment);
         }
       });
-
+      // sorting replies based on timestamp
       Object.keys(repliesMap).forEach((key) => {
         repliesMap[key].sort(
           (a, b) => new Date(a.timestamp) - new Date(b.timestamp)

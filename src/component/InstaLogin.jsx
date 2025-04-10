@@ -21,9 +21,7 @@ const LoginWithInstagram = () => {
         >
           Welcome
         </h1>
-        {/* <p className="text-white text-center mb-10">
-          Connect your Instagram account to continue
-        </p> */}
+
         <button
           onClick={handleLogin}
           className="flex items-center justify-center  hover:opacity-90 transition duration-300 text-white font-semibold px-6 py-2 rounded-full shadow-lg cursor-pointer text-lg"

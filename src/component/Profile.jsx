@@ -5,15 +5,12 @@ const UserProfile = () => {
   const [profile, setProfile] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Replace with your backend route to fetch Instagram user info
   const fetchProfile = async () => {
     try {
-      console.log("Fetching profile from backend...");
       const res = await fetch(`${BACKEND_URL}/profile/me`, {
         method: "GET",
-        credentials: "include", // needed if using httpOnly cookie
+        credentials: "include",
       });
-      //   console.log("Response:", res);
       const data = await res.json();
       console.log("Profile data:", data);
 
@@ -35,33 +32,22 @@ const UserProfile = () => {
   const handleLogout = async () => {
     try {
       // Delete cookie
-      console.log("Logging out...");
-      //   const res = await fetch(`${BACKEND_URL}/auth/logout`, {
-      //     method: "GET",
-      //     credentials: "include",
-      //   });
-      //   setProfile(null);
+
       window.location.replace(`${BACKEND_URL}/auth/logout`);
-      //   console.log("Logout response:", res);
-      // refresh the page to remove the cookie
-      //   window.location.reload();
     } catch (err) {
       console.error("Error logging out:", err);
     }
   };
 
   useEffect(() => {
-    console.log("Fetching profile...");
     fetchProfile();
   }, []);
 
   if (loading) {
-    console.log("Loading profile...");
     return <div className="text-center mt-10">Loading...</div>;
   }
 
   if (!profile) {
-    console.log("No profile data found.");
     //redirect to login page
     window.location.href = "/login";
     return (
@@ -112,8 +98,6 @@ const UserProfile = () => {
               <span className="text-gray-500">Following</span>
             </div>
           </div>
-
-          {/* <p className="text-sm text-gray-500">ID: {profile.id}</p> */}
         </div>
       </div>
     </div>
